@@ -57,5 +57,8 @@ jobs:
     - name: Build Docker Image 
       run: | 
         docker build -t 28cloud/boardgame:latest .
+    - name: Trivy Image Scan 
+      run: | 
+        trivy image --format table -o trivy-image-report.html 28cloud/board:latest     
 
 
